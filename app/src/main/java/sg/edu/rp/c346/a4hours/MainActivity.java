@@ -16,26 +16,13 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.search_menu, menu);
         return true;
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here.
         int id = item.getItemId();
-
-        if (id == R.id.action_logOut) {
-            //This signs out the user
-            //mAuth.signOut();
-            finish();
-            //Intents the page to login page
-            Intent logoutIntent = new Intent(MainActivity.this,LoginActivity.class);
-            //Prevent the user from clicking back and going back in (just in case)
-            logoutIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(logoutIntent);
-
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
